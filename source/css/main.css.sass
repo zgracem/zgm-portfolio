@@ -1,0 +1,63 @@
+@import mixins
+@import fonts
+@import opentype
+
+$paper:   #f8f8f8
+$black:   #282828
+$green:   #8ea604 //accent
+$pink:    #db3069 //hilite
+
+$wt-light:  300
+$wt-medium: 400
+$wt-heavy:  700
+
+$pagewidth: 36rem
+
+$font: "Europa"
+// $weights: "#{$wt-light},#{$wt-medium},#{$wt-medium}i,#{$wt-heavy}"
+// @import url("https://fonts.googleapis.com/css?family=#{$font}:#{$weights}")
+
+html
+  background-color: $paper
+  font-size: 16px
+
+body
+  background-color: $paper
+  color: $black
+
+  font-family: $font, sans-serif
+  font-size: 1rem
+  line-height: 2rem
+  font-weight: $wt-light
+  font-feature-settings: $defaults
+  -webkit-font-smoothing: antialiased
+
+::selection
+  background: $pink
+  color: $black
+  text-shadow: none
+
+a:link, a:visited
+  text-decoration: none
+  color: $green
+
+  transition: all 120ms
+
+  -webkit-tap-highlight-color: $pink
+
+a:active
+  color: $black
+
+a:hover
+  color: $pink
+
+=bold
+  font-weight: $wt-heavy
+
+b, strong
+  +bold
+
+abbr
+  border-bottom: 0
+  text-decoration: none
+

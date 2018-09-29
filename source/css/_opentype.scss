@@ -1,0 +1,61 @@
+// ----------------------------------------------------------------------------
+// OpenType setup
+// Based on: kennethormandy.com/journal/normalize-opentype-css
+//           microsoft.com/typography/otspec/featurelist.htm
+// ----------------------------------------------------------------------------
+// kern: kerning
+
+// liga: standard ligatures     dlig: discretionary ligatures
+// clig: contextual ligatures   calt: contextual alternates
+
+// pnum: proportional figures   tnum: tabular figures
+// onum: oldstyle figures       lnum: lining figures
+// zero: slashed zero
+
+// smcp: small capitals         c2sc: small capitals from capitals
+
+// subs: subscript              sups: superscript
+// ----------------------------------------------------------------------------
+
+// kerning and contextual alternates
+$txt-basic  : "kern" 1, "calt" 1;
+
+// standard & contextual ligatures
+$lig-basic  : "liga" 1, "clig" 1;
+
+// discretionary ligatures
+$lig-all    : "dlig" 1;
+
+// disable text features
+$lig-off    : "liga" 0, "clig" 0, "dlig" 0;
+$txt-off    : "kern" 0, "calt" 0, $lig-off;
+
+// proportional figures
+$num-pro    : "pnum" 1, "tnum" 0;
+// tabular figures
+$num-tab    : "pnum" 0, "tnum" 1;
+
+// oldstyle figures
+$num-old    : "onum" 1, "lnum" 0;
+// lining figures
+$num-lin    : "onum" 0, "lnum" 1;
+
+// defaults
+$defaults   : $txt-basic, $num-pro, $num-old, $lig-basic;
+
+// abbr {
+//   // turn on small caps and small-caps-from-regular-caps
+//   font-feature-settings: $defaults, "smcp" 1, "c2sc" 1;
+// }
+
+// sup {
+//   // proper superscript
+//   vertical-align: baseline;
+//   font-feature-settings: $defaults, "sups" 1;
+// }
+
+// sub {
+//   // proper subscript
+//   vertical-align: baseline;
+//   font-feature-settings: $defaults, "subs" 1;
+// }

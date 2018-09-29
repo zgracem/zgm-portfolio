@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------------
+// functions
+// ----------------------------------------------------------------------------
+
+@function plus_encode($string)
+  @while str_index($string, " ") != null
+    $i: str_index($string, " ")
+    $a: str_slice($string, 0, $i - 1)
+    $b: str_slice($string, $i + 1)
+    $string: $a + "+" + $b
+
+  @return $string
+
+// ----------------------------------------------------------------------------
+
+@function list_to_string($list, $separator: ",")
+  $string: ""
+
+  @each $item in $list
+    $string: $string + $separator + $item
+
+  @return str_slice($string, 2) // remove leading separator
+
+// ----------------------------------------------------------------------------
+// mixins
+// ----------------------------------------------------------------------------
+
+=import_google_fonts($map)
+  $request: ""
+
+  @each $family, $weights in $map
+    $family: plus_encode($family)
+    $weights: list_to_string($weights)
+
+    // append to request
+    @if str_length($request) > 0
+      $request: $request + "|"
+    $request: $request + $family + ":" + $weights
+
+  @import url("https://fonts.googleapis.com/css?family=#{$request}")
