@@ -1,6 +1,6 @@
 config[:site]         = {}
 config[:site][:title] = "Z. (Amy) Grace Moreau"
-config[:site][:url]   = "https://zgracem.github.io"
+config[:site][:url]   = "https://inescapable.org/~zgm"
 config[:site][:description] = %(Documentation, web design, weird digital art.)
 
 config[:source]       = "source"
@@ -22,7 +22,7 @@ configure :server do
 end
 
 configure :build do
-  config[:build_dir] = ".."
+  config[:http_prefix] = "/~zgm"
 end
 
 activate :directory_indexes
