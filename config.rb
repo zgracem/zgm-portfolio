@@ -1,7 +1,7 @@
 config[:site]         = {}
 config[:site][:title] = "Z. (Amy) Grace Moreau"
 config[:site][:url]   = "https://inescapable.org/~zgm"
-config[:site][:description] = %(Documentation, web design, weird digital art.)
+config[:site][:description] = %(Websites. Widgets. Weird Art. Words.)
 
 config[:source]       = "source"
 config[:layouts_dir]  = "layouts"
